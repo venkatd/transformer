@@ -10,19 +10,19 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:transformer.helloWorld",
-		"onCommand:transformer.kebap"
+		"onCommand:transformer.camelcase",
+		"onCommand:transformer.lowerkebab"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "transformer.helloWorld",
-				"title": "Hello World"
+				"command": "transformer.camelcase",
+				"title": "camelCase"
 			},
 			{
-				"command": "transformer.kebap",
-				"title": "Kebap"
+				"command": "transformer.lowerkebab",
+				"title": "lower-kebab"
 			}
 		]
 	},

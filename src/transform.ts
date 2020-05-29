@@ -10,7 +10,9 @@ export function registerTransform(context: ExtensionContext, name: string, trans
 
 export function transformSelectedText(editor: TextEditor | undefined, transform: Transform): void {
   if (!editor) return; // No open text editor found
-  if (editor.selections.length == 0) return;
+  if (editor.selections.length === 0) {
+    return;
+  }
 
   editor.edit((builder) => {
     for (const selection of editor.selections) {

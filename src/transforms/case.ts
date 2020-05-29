@@ -26,7 +26,7 @@ export function uppersnake(input: string): string {
   return getKebabOrSnakeCase(input, false, false);
 }
 
-export function camel(input: string): string {
+export function camelcase(input: string): string {
   return getCamelCase(input, true);
 }
 
