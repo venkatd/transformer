@@ -1,6 +1,12 @@
-import { window, TextEditor } from 'vscode';
+import { window, TextEditor, ExtensionContext, commands } from 'vscode';
 
-type Transform = (input: string) => string;
+export type Transform = (input: string) => string;
+
+export function registerTransform(context: ExtensionContext, name: string, transform: Transform) {
+  context.subscriptions.push(commands.registerCommand(name, function () {
+    transformSelectedText(window.activeTextEditor, transform);
+  }));
+}
 
 export function transformSelectedText(editor: TextEditor | undefined, transform: Transform): void {
   if (!editor) return; // No open text editor found
